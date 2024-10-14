@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "enter your age"
+read $age
+echo "The age of the $NAME is :$age"
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+URL="https://www.guvi.in"
+HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+echo "HTTP Status code: $HTTP_STATUS"
+if [[ "$HTTP_STATUS" -ge 200 && "$HTTP_STATUS" -lt 400 ]]; then
+    echo  "success: Then Website is Rechable."
+else
+    echo "Failure: The Website Is Not Rechable. Error Code: $HTTP_STATUS"
+fi

@@ -1,0 +1,16 @@
+#!/bin/bash
+URL="https://www.guvi.in"
+
+# Get the HTTP statu code using curl
+HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" $URL)
+
+# Print the HTTP status code
+echo "HTTP Status Code: $HTTP_STATUS"
+
+# Check if the status code indicates success (2xx) or failure
+if [[ $HTTP_STATUS -ge 200 && $HTTP_STATUS -lt 300 ]]; then
+    echo "Success: The website is accessible."
+else 
+    echo "Failed: Unexpected status code. Error $HTTP_STATUS"
+fi
+
